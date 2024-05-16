@@ -1,5 +1,5 @@
 project "ImGui"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "off"
@@ -57,14 +57,20 @@ project "ImGui"
 		symbols "on"
 
 	filter "configurations:DebugDLL"
-		defines "_UNICODE"
-		defines "UNICODE"
+		defines {
+			"_UNICODE",
+			"UNICODE",
+			"IMGUI_STATIC_LIB"
+		}
 		runtime "Debug"
 		symbols "on"
 
 	filter "configurations:ReleaseDLL"
-		defines "_UNICODE"
-		defines "UNICODE"
+		defines {
+			"_UNICODE",
+			"UNICODE",
+			"IMGUI_STATIC_LIB"
+		}
 		runtime "Release"
 		optimize "on"
 
