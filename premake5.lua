@@ -38,8 +38,16 @@ project "ImGui"
 		symbols "on"
 
 	filter "configurations:DebugDLL"
+		defines "_UNICODE"
+		defines "UNICODE"
 		runtime "Debug"
 		symbols "on"
+
+	filter "configurations:ReleaseDLL"
+		defines "_UNICODE"
+		defines "UNICODE"
+		runtime "Release"
+		optimize "on"
 
 	filter "configurations:Release"
 		runtime "Release"
