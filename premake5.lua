@@ -55,30 +55,27 @@ project "ImGui"
 	filter "configurations:Debug"
 		runtime "Debug"
 		symbols "on"
-
-	filter "configurations:DebugDLL"
 		defines {
 			"_UNICODE",
 			"UNICODE",
 			"IMGUI_STATIC_LIB"
 		}
-		runtime "Debug"
-		symbols "on"
-
-	filter "configurations:ReleaseDLL"
-		defines {
-			"_UNICODE",
-			"UNICODE",
-			"IMGUI_STATIC_LIB"
-		}
-		runtime "Release"
-		optimize "on"
 
 	filter "configurations:Release"
 		runtime "Release"
 		optimize "on"
+		defines {
+			"_UNICODE",
+			"UNICODE",
+			"IMGUI_STATIC_LIB"
+		}
 
     filter "configurations:Dist"
 		runtime "Release"
 		optimize "on"
         symbols "off"
+		defines {
+			"_UNICODE",
+			"UNICODE",
+			"IMGUI_STATIC_LIB"
+		}
